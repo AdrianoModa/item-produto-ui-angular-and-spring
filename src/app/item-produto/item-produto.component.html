@@ -1,0 +1,25 @@
+<app-form-item-produto></app-form-item-produto>
+
+<p-table [value]="produtos">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Id do produto: </th>
+            <th>Nome do Produto: </th>
+            <th>Valor do Produto: </th>
+            <th>Status do Estoque: </th>
+            <th>Serie do Produto : </th>
+            <th>Remover</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-produto>
+        <tr>
+            <td>{{produto.id}}</td>
+            <td>{{produto.nomeProduto}}</td>
+            <td>R$ {{produto.valorProduto}}</td>
+            <td>{{produto.emEstoque}}</td>
+            <td>{{produto.serieProduto}}</td>
+            <td style="text-align: center"><button pButton type="button" class="ui-button-danger" label="X" (click)="remover(produto.id)"></button></td>
+        </tr>
+        <p-toast position="top-center"></p-toast>
+    </ng-template>
+</p-table>

@@ -1,0 +1,9 @@
+.content {
+    background-color: antiquewhite;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 12px 12px;
+}
+
+.form-control {
+    margin: 5px;
+}

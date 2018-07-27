@@ -1,0 +1,55 @@
+<div class="content">
+  <form #f="ngForm" (ngSubmit)="salvar(f)">
+    <h2>Lista de Produtos</h2>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-key"></i></span>
+          <input type="number" min="0" pInputText name="id" [(ngModel)]="produtos.id" placeholder="ID do Produto">         
+        </div>
+      </div>
+    </div>  
+
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+          <input type="text" pInputText name="nomeProduto" [(ngModel)]="produtos.nomeProduto" placeholder="Nome do Produto">      
+        </div>
+      </div>
+    </div>  
+
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-money" aria-hidden="true"></i></span>
+          <input type="text" pInputText name="valorProduto" [(ngModel)]="produtos.valorProduto" placeholder="Valor do Produto">          
+        </div>
+      </div>
+    </div>   
+
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span>
+          <input type="text" pInputText name="emEstoque" [(ngModel)]="produtos.emEstoque" placeholder="Status do Produto">       
+        </div>
+      </div>
+    </div>
+
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-barcode" aria-hidden="true"></i></span>
+          <p-inputMask mask="aaaaa99992018" type="text" name="serieProduto" [(ngModel)]="produtos.serieProduto" placeholder="Serie do Produto"></p-inputMask>         
+        </div>
+      </div>
+    </div>
+    
+    <p-toast position="top-center"></p-toast>
+
+    <p-button class=".ui-button-success" (click)="msgAddProduto()" label="Salvar" type="submit" *ngIf="!f.value.id"></p-button>
+    <p-button class=".ui-button-success" (click)="msgUpdateProduto()" label="Atualizar" type="submit" *ngIf="f.value.id"></p-button>
+
+  </form>
+</div>
