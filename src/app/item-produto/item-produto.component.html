@@ -18,7 +18,7 @@
             <td>R$ {{produto.valorProduto}}</td>
             <td>{{produto.emEstoque}}</td>
             <td>{{produto.serieProduto}}</td>
-            <td style="text-align: center"><button pButton type="button" class="ui-button-danger" label="X" (click)="remover(produto.id)"></button></td>
+            <td style="text-align: center"><button pButton type="button" class="ui-button-danger" label="X" (click)="remover(produto)"></button></td>
         </tr>
         <p-toast position="top-center"></p-toast>
     </ng-template>
